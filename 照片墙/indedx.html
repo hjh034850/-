@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 660px;
+            margin: 0 auto;
+        }
+        #container img{
+            width: 200px;
+            height: 150px;
+            float: left;
+            margin: 10px;
+        }
+        .collide{
+            border: 1px dotted red;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="images/1.jpg" alt="">
+        <img src="images/2.jpg" alt="">
+        <img src="images/3.jpg" alt="">
+        <img src="images/4.jpg" alt="">
+        <img src="images/5.jpg" alt="">
+        <img src="images/6.jpg" alt="">
+        <img src="images/7.jpg" alt="">
+        <img src="images/8.jpg" alt="">
+        <img src="images/9.jpg" alt="">
+    </div>
+
+    <script src="jslib.js"></script>
+    <script>
+        var oContainer = document.getElementById("container");
+        var aImg = document.getElementsByTagName("img");
+        var zIndex = 1;
+        var collide = [];
+        var nearElem
+
+
+        for(var i = 0;i < aImg.length;i++){
+            aImg[i].style.left = aImg[i].offsetLeft + "px";
+            aImg[i].style.top = aImg[i].offsetTop + "px";
+        }
+        for(var j = 0;j < aImg.length;j++){
+            aImg[j].style.position = "absolute";
+            aImg[j].style.margin = 0;
+            drag(aImg[j]);
+            aImg[j].pos = {
+                left:aImg[j].offsetLeft,
+                top:aImg[j].offsetTop
+            }
+        }
+
+
+
+
+
+        function drag(elem) {
+            elem.onmousedown = function(e){
+                e = e||window.event;
+                var iDisX = e.clientX - elem.offsetLeft;
+                var iDisY = e.clientY - elem.offsetTop;
+                elem.style.zIndex =  zIndex ++;
+                document.onmousemove = function(e){
+                    e = e||window.event;
+                    elem.style.left = e.clientX - iDisX +"px";
+                    elem.style.top = e.clientY - iDisY +"px";
+
+                    collide = [];
+                    //碰撞检测
+                    for(var i = 0;i <aImg.length;i++) {
+                        if (aImg[i] == elem) {
+                            continue;
+                        }
+                        var isCol = checkCollde(elem, aImg[i]);
+                        if (isCol) {
+                            collide.push(aImg[i]);
+                        }
+                        aImg[i].className = "";
+                    }
+                        if(collide.length > 0) {
+                             nearElem = nearest(elem);
+                             nearElem.className = "collide";
+                        }else {
+                            nearElem = null;
+                        }
+
+                    return false;
+                }
+                 document.onmouseup = function(){
+                    document.onmousemove = null;
+                     document.onmouseup = null;
+                    if(nearElem){
+                        animate(elem,nearElem.pos);
+                        animate(nearElem,elem.pos);
+
+                        var pos = elem.pos;
+                        elem.pos = nearElem.pos;
+                        nearElem.pos = pos;
+                        nearElem.className = "";
+                    }else {
+                        animate(elem,elem.pos);
+                    }
+
+                }
+            }
+        }
+
+        function checkCollde(elem,target){
+            var elemL = elem.offsetLeft,
+                elemR = elem.offsetLeft + elem.offsetWidth,
+                elemT = elem.offsetTop,
+                elemB = elem.offsetTop + elem.offsetHeight;
+            var targetL = target.offsetLeft,
+                targetR = target.offsetLeft + target.offsetWidth,
+                targetT = target.offsetTop,
+                targetB = target.offsetTop + target.offsetHeight;
+
+            if(elemR < targetL || elemL > targetR || elemB < targetT || elemT > targetB){
+                return false;
+            }else {
+                return true;
+            }
+
+        }
+
+        function nearest(elem){
+            var mindis = 999999;
+            var index = 0;
+            for(var i = 0; i <collide.length;i++){
+                var x = collide[i].offsetLeft - elem.offsetLeft;
+                var y = collide[i].offsetTop - elem.offsetTop;
+                var dis = Math.sqrt(x * x + y * y);
+                if(dis < mindis){
+                    mindis = dis;
+                    index = i;
+                }
+            }
+            return collide[index];
+        }
+    </script>
+</body>
+</html>
