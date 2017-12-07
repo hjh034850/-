@@ -82,7 +82,6 @@ $("#jnNoticeInfo a").on("mouseover",function(e){
     $("#aText").remove();
 }).on("mousemove",function(e){
     $("#aText").css({
-
         "position":"absolute",
         "left":(e.pageX + x) + "px",
         "top":(e.pageY + y) + "px"
