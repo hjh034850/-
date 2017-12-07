@@ -56,10 +56,6 @@
                 top:aImg[j].offsetTop
             }
         }
-
-
-
-
         function drag(elem) {
             elem.onmousedown = function(e){
                 e = e||window.event;
@@ -91,7 +87,6 @@
                     return false;
                 }
                  document.onmouseup = function(){
-
                      document.onmousemove = null;
                      document.onmouseup = null;
                     if(nearElem){
