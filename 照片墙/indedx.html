@@ -42,9 +42,7 @@
         var aImg = document.getElementsByTagName("img");
         var zIndex = 1;
         var collide = [];
-        var nearElem
-
-
+        var nearElem = null;
         for(var i = 0;i < aImg.length;i++){
             aImg[i].style.left = aImg[i].offsetLeft + "px";
             aImg[i].style.top = aImg[i].offsetTop + "px";
@@ -62,7 +60,6 @@
 
 
 
-
         function drag(elem) {
             elem.onmousedown = function(e){
                 e = e||window.event;
@@ -73,7 +70,6 @@
                     e = e||window.event;
                     elem.style.left = e.clientX - iDisX +"px";
                     elem.style.top = e.clientY - iDisY +"px";
-
                     collide = [];
                     //碰撞检测
                     for(var i = 0;i <aImg.length;i++) {
@@ -92,16 +88,15 @@
                         }else {
                             nearElem = null;
                         }
-
                     return false;
                 }
                  document.onmouseup = function(){
-                    document.onmousemove = null;
+
+                     document.onmousemove = null;
                      document.onmouseup = null;
                     if(nearElem){
                         animate(elem,nearElem.pos);
                         animate(nearElem,elem.pos);
-
                         var pos = elem.pos;
                         elem.pos = nearElem.pos;
                         nearElem.pos = pos;
@@ -109,7 +104,6 @@
                     }else {
                         animate(elem,elem.pos);
                     }
-
                 }
             }
         }
@@ -129,7 +123,6 @@
             }else {
                 return true;
             }
-
         }
 
         function nearest(elem){
