@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">ddqdwwq</div>
+<script>
+    function $(selector){
+        if(typeof selector == "string"){
+            if(selector.charAt(0) == "#"){
+                return document.getElementById(selector.substring(1));
+            }else if(selector.charAt(0) == "."){
+                return getEleByClassName(selector.substring(1));
+            }
+        }else if(typeof selector == "function"){
+            addevent(document,"DOMContentLoaded",selector,false);
+        }
+    }
+
+
+
+
+    function getEleByClassName(clsName,context){
+        var result = [];
+        var parentEle = context || document;
+        var allEle = parentEle.getElementsByTagName("*");
+        for(var i = 0;i < allEle.length;i++){
+            var arr = allEle[i].className.split(" ");
+            for(var j = 0 ;j < arr.length;j++){
+                if(arr[j] == clsName){
+                    result.push(allEle[i]);
+                }
+            }
+        }
+        return result;
+    }
+    function addevent(elem,type,fn,flag){
+        if(elem.addEventListener){
+            elem.addEventListener(type,fn,flag);
+        }else{//ie浏览器
+            elem.attachEvent("on"+type,function(){
+                fn.call(elem);
+            })//绑定事件，this指向window
+        }
+    }
+
+    $(function(){
+        console.log(111);
+    })
+</script>
+</body>
+</html>
