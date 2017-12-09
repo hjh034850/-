@@ -7,18 +7,26 @@
 <body>
 <div id="div1">ddqdwwq</div>
 <script>
-    function $(selector){
+    function $(selector,context){
+        return new Jquery(selector,context);
+    }
+    function Jquery(selector,context){
+        this.element = [];
         if(typeof selector == "string"){
             if(selector.charAt(0) == "#"){
-                return document.getElementById(selector.substring(1));
+                this.element.push(document.getElementById(selector.substring(1)));
             }else if(selector.charAt(0) == "."){
-                return getEleByClassName(selector.substring(1));
+                this.element = getEleByClassName(selector.substring(1),context);
             }
         }else if(typeof selector == "function"){
             addevent(document,"DOMContentLoaded",selector,false);
         }
     }
-
+    Jquery.prototype.on = function(type,fn){
+        for(var i =0;i <this.element.length;i++){
+            addevent(this.element[i],type,fn,false);
+        }
+    }
 
 
 
@@ -45,8 +53,7 @@
             })//绑定事件，this指向window
         }
     }
-
-    $(function(){
+    $("#div1").on("click",function(){
         console.log(111);
     })
 </script>
