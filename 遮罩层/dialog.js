@@ -42,6 +42,11 @@ define(['jquery'],function($){
             this.$content.load(value.content);
             $("body").append(this.$mask);
 
+
+            
+
+
+
             /*$(".title h2").html(arg.title);
             $(".content").html(arg.content)*/
         },
