@@ -13,6 +13,8 @@ require(['jquery','dialog'],function($,dialog){
             title:"niaho",
             content:"pianduan.html"
         });
+
+
     })
     $("body").on("click","#btn",function(){
         dialog.close();
