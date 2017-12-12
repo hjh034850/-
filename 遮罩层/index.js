@@ -6,15 +6,25 @@ requirejs.config({
         jquery: '../jquery-1.12.4'
     }
 });
-require(['jquery','dialog'],function($,dialog){
-    $("#btn").on("click",function(){
-        dialog.open({
+require(['jquery','dialog1'],function($,Dialog){
+    $("#btn").on("click",function() {
+        var dialog1 = new Dialog({
             width:800,
-            title:"niaho",
+            title:"dwfwefw",
             content:"pianduan.html"
         });
+        dialog1.open();
+        $("body").on("click","#cancel",function(){
+            dialog1.close();
+        });
+    });
+    $("body").on("click","#confirm",function(){
+        var dialog2 = new Dialog({
+            width:200,
+            height:100,
+            title:"dawa",
+            content:"piandaun2.html"
+        });
+        dialog2.open();
     })
-    $("body").on("click","#cancel",function(){
-        dialog.close();
-    })
-});
+})
