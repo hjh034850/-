@@ -10,7 +10,7 @@ require(['jquery','dialog1'],function($,Dialog){
     $("#btn").on("click",function() {
         var dialog1 = new Dialog({
             width:800,
-            
+
             title:"dwfwefw",
             content:"pianduan.html"
         });
@@ -18,6 +18,7 @@ require(['jquery','dialog1'],function($,Dialog){
         $("body").on("click","#cancel",function(){
             dialog1.close();
         });
+
     });
     $("body").on("click","#confirm",function(){
         var dialog2 = new Dialog({
