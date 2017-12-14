@@ -14,10 +14,10 @@ define(['jquery'],function($){
             height: 200
         }
         $.extend(this.defaultValue,arg);
+        
         this.$mask = $( '<div class="mask"></div>');
         this.$container = $('<div class="container"></div>');
         this.$title = $('<div class="title"></div>');
-        
         this.$H2 = $('<h2></h2>').html(this.defaultValue.title);
         this.$close = $('<span class="close">×</span>').on("click",function(){
             _this.close();
