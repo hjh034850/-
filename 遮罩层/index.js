@@ -24,6 +24,7 @@ require(['jquery','dialog1'],function($,Dialog){
             height:100,
             title:"dawa",
             content:"piandaun2.html"
+
         });
         dialog2.open();
         $("body").on("click","#cancel2",function() {
