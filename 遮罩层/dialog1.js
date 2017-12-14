@@ -20,7 +20,6 @@ define(['jquery'],function($){
         this.$H2 = $('<h2></h2>').html(this.defaultValue.title);
         this.$close = $('<span class="close">×</span>').on("click",function(){
             _this.close();
-            
         });
         this.$content = $('<div class="content"></div>');
     }
