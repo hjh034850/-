@@ -29,6 +29,7 @@ define(['jquery'],function($){
             height:this.defaultValue.height,
             marginLeft:-this.defaultValue.width/2,
             marginTop:-this.defaultValue.height/2
+
         });
         this.$title.append(this.$H2).append(this.$close);
 
