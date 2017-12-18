@@ -22,9 +22,9 @@ define(['jquery'],function($){
             _this.close();
         });
         this.$content = $('<div class="content"></div>');
+        
     }
     Dialog.prototype.open =  function(){
-        
         this.$container.appendTo(this.$mask).append(this.$title).append(this.$content).css({
             width:this.defaultValue.width,
             height:this.defaultValue.height,
