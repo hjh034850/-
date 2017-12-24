@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+        }
+        div::after{
+            content: "";
+            display: block;
+            width: 200px;
+            height: 200px;
+            border: 10px solid;
+            border-radius: 50%;
+            position: absolute;
+            left: -10px;
+            top: -10px;
+        }
+        #div1{
+            border: 10px solid blue;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #div1::after{
+            border-color: blue;
+            border-bottom-color: transparent;
+            z-index: 1;
+        }
+        #div2{
+            border: 10px solid black;
+            border-radius: 50%;
+            position: absolute;
+            left: 230px;
+            top: 0px;
+        }
+        #div2::after{
+            border-color: black;
+            border-left-color: transparent;
+            z-index: 1;
+        }
+        #div3{
+            border: 10px solid red;
+            border-radius: 50%;
+            position: absolute;
+            left: 460px;
+            top: 0;
+        }
+        #div3::after{
+            border-color: red;
+            border-left-color: transparent;
+            z-index: 1;
+        }
+        #div4{
+            border: 10px solid yellow;
+            border-radius: 50%;
+            position: absolute;
+            left: 110px;
+            top: 110px;
+        }
+        #div4::after{
+            border-color: yellow;
+        }
+        #div5{
+            border: 10px solid green;
+            border-radius: 50%;
+            position: absolute;
+            left: 340px;
+            top: 110px;
+        }
+        #div5::after{
+            border-color: green;
+            z-index: 1;
+            border-right-color: transparent;
+            border-top-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+    <div id="div5"></div>
+</body>
+</html>
