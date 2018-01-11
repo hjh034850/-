@@ -3,9 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            height: 600px;
+            background: #eee;
+            display: -webkit-box;
+            -webkit-box-orient:vertical;
+        }
+        #div2{
+            height: 50px;
+            background: red;
+        }
+        #div3{
+            -webkit-box-flex:1;
+            background: blue;
+        }
+        #div4{
+            height: 50px;
+            background: green;
+        }
+    </style>
 </head>
 <body>
-<div id="div1"></div>
-
+<div id="div1">
+    <div id="div2">11</div>
+    <div id="div3">22</div>
+    <div id="div4">33</div>
+</div>
 </body>
 </html>
