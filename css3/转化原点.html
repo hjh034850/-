@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000000;
+            border-radius: 50%;
+            margin: 100px auto;
+            position: relative;
+        }
+        #div1 ul{
+            list-style: none;
+        }
+        #div1 li{
+            width: 2px;
+            height: 38px;
+            background: #000;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            margin-left:-1px;
+            -webkit-transform-origin: 1px 100px;
+        }
+        .one{
+        }
+        .two{
+            -webkit-transform: rotate(12deg);
+        }
+        .three{
+            -webkit-transform: rotate(24deg);
+        }
+        .four{
+            -webkit-transform: rotate(36deg);
+        }
+    </style>
+</head>
+<body>
+        <div id="div1">
+            <ul>
+                <li class="one"></li>
+                <li class="two"></li>
+                <li class="three"></li>
+                <li class="four"></li>
+            </ul>
+        </div>
+</body>
+</html>
