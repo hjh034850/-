@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="common.css">
+</head>
+<body>
+    <div class="header">
+        <div class="wrapper">
+        <div id="logo">
+            <a href="#">
+                <img src="imgages/网页首页.jpg" alt="">
+            </a>
+        </div>
+        <ul class="nav">
+            <li><a href="#">About</a></li>
+            <li><a href="#" class="active">Services</a></li>
+            <li><a href="#">Works</a></li>
+            <li><a href="#">Blog</a></li>
+            <li class="no-line"><a href="#">Contact Us</a></li>
+        </ul>
+        <div class="text">Search
+            <span class="biggertext"></span>
+        </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="lunbo">
+            <a href=""><img src="imgages/center.jpg" alt="" class="selected"></a>
+            <a href=""><img src="imgages/轮播2.jpg" alt=""></a>
+            <a href=""><img src="imgages/轮播3.jpg" alt=""></a>
+            <a href=""><img src="imgages/轮播4.jpg" alt=""></a>
+        </div>
+        <div class="wrapper">
+            <div class="prev"></div>
+            <div class="next"></div>
+        </div>
+    </div>
+
+        <div class="wrapper">
+            <ul class="introduce">
+                <li>
+                    <p class="title">Web Design</p>
+                    <div></div>
+                    <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse rhoncus,
+                        lacus ac commodo volutpat, felis odio pulvinar enim, non dapibus mauris nulla sed ipsum</p>
+                    <button></button>
+                </li>
+                <li>
+                    <p class="tltle">Social Media</p>
+                    <div></div>
+                    <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse rhoncus,
+                        lacus ac commodo volutpat, felis odio pulvinar enim, non dapibus mauris nulla sed ipsum</p>
+                    <button></button>
+                </li>
+                <li>
+                    <p class="tltle">Mobile Apps</p>
+                    <div></div>
+                    <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse rhoncus,
+                        lacus ac commodo volutpat, felis odio pulvinar enim, non dapibus mauris nulla sed ipsum</p>
+                    <button></button>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+    <script>
+        var oLunbo = document.getElementsByClassName("lunbo")[0];
+        var aImg = oLunbo.getElementsByTagName("img");
+        var oPrev = document.getElementsByClassName("prev")[0];
+        var oNext = document.getElementsByClassName("next")[0];
+        oNext.onclick = function(){
+            for(var i = 0;i <aImg.length;i++){
+                if(aImg[i].className == "selected"){
+                    for(var j = 0;j <aImg.length;j++) {
+                        aImg[j].className = "";
+                    }if(i == 3){
+                        i = -1;
+                    }
+                    aImg[i+1].className = "selected";
+                    break;
+                }
+            }
+        }
+        oPrev.onclick = function(){
+            for(var i = 0;i <aImg.length;i++){
+                if(aImg[i].className == "selected"){
+                    for(var j = 0;j <aImg.length;j++) {
+                        aImg[j].className = "";
+                    }if(i == 0){
+                        i = 4;
+                    }
+                    aImg[i-1].className = "selected";
+                    break;
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
