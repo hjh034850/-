@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #000;
+        }
+        #container img{
+            /*float: left;*/
+            margin-right:1px;
+
+        }
+        #content{
+            padding-top:50%;
+        }
+        #content img{
+            position: absolute;
+            width: 100%;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+    <div id="content">
+
+    </div>
+
+
+    <script src="jquery-1.12.4.js"></script>
+    <script src="jquery.mobile-1.4.5.min.js"></script>
+    <script>
+        for(var i = 0;i <24;i++){
+            var oImg = new Image();
+            oImg.src = "img/thumbs/"+ (i+1)+".jpg";
+            oImg.width = $(window).width()/4-1;
+            oImg.height = $(window).height()/6;
+            $("#container").append(oImg);
+        }
+        for(var i = 0;i <24;i++){
+            var oImg = new Image();
+            oImg.src = "img/"+ (i+1)+".jpg";
+            oImg.height = $(window).height()/3;
+            oImg.style.top = oImg.height;
+            $("#content").append(oImg);
+        }
+        var oContainer = document.getElementById("container");
+        var smallImg = oContainer.getElementsByTagName("img");
+        var oContent = document.getElementById("content");
+        var bigImg = oContent.getElementsByTagName("img");
+
+       window.onload =  function(){
+           for(var i = 0;i <24;i++){
+               smallImg[i].index = i;
+               bigImg[i].index = i;
+               $(smallImg[i]).on("tap", function(){
+                   oContainer.style.display = "none";
+                   bigImg[this.index].style.display = "block";
+                   $(bigImg).on("swipeleft",function(){
+                       var newImg = $(this).index();
+                       bigImg[newImg].style.display = "none";
+                       if(newImg == 23){
+                           newImg = -1;
+                       }
+                       bigImg[newImg+1].style.display = "block";
+                   })
+                   $(bigImg).on("swiperight",function(){
+                       var oldImg = $(this).index();
+                       bigImg[oldImg].style.display = "none";
+                       if(oldImg == 0){
+                           oldImg = 24;
+                       }
+                       bigImg[oldImg-1].style.display = "block";
+                   })
+               })
+           }
+        }
+
+    </script>
+</body>
+</html>
