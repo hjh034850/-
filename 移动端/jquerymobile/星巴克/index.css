@@ -1,0 +1,396 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 4000px;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+
+}
+/*头部开始*/
+.header{
+    height: 100px;
+    box-shadow: 0 -5px 5px 5px rgba(0,0,0,0.1);
+    display: -webkit-box;
+    margin-top:3px;
+    padding-left:33px;
+    padding-right:28px;
+}
+.menu{
+    -webkit-box-flex: 5;
+    width: 0;
+}
+.menu .menu-icon{
+    margin-top:32px;
+    cursor: pointer;
+}
+.menu p{
+    width: 30px;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    opacity: 0.7;
+}
+.logo{
+    -webkit-box-flex: 2;
+    width: 0;
+}
+.logo img{
+    width: 73px;
+    max-width: 100%;
+    margin-top:14px;
+}
+.user-info{
+    -webkit-box-flex: 5;
+    width: 0;
+}
+.user-info p{
+    text-align: right;
+    font-size: 16px;
+}
+.user-info .user-title{
+    margin-top:35px;
+    color: #4e4e4e;
+}
+.user-info a{
+    color: #b89f7a;
+    font-size: 14px;
+    font-weight: 700;
+}
+/*头部结束*/
+
+/*content开始*/
+.content{
+    position: relative;
+}
+.img01,.img02{
+    width: 100%;
+    display: block;
+}
+.img02{
+    display: none;
+}
+
+.content span{
+    display: block;
+    background: #47474A;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    font-weight: 900;
+    right: 32px;
+    padding: 3px 5px;
+    position: absolute;
+    top: 20px;
+}
+.content  .under_more{
+    position: absolute;
+    font-size: 18px;
+    right: 25px;
+    bottom: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+/*content结束*/
+
+
+/*rewards开始*/
+.rewards{
+    background: #0f0f0f;
+}
+.rewards .container{
+    width: 750px;
+    margin: 0 auto;
+    color: #707070;
+    overflow: hidden;
+}
+ .rewards_mask{
+    width: 260px;
+    height: 145px;
+    padding-left:60px;
+    padding-top:75px;
+    background: url("images/rewards_bg.png") 0 0 no-repeat;
+    background-size: contain;
+    float: left;
+}
+.rewards .rewards_mask p{
+    font-size: 18px;
+    color: #ffffff;
+}
+.rewards .rewards_mask img{
+    width: 160px;
+}
+ .rewards_content{
+    width: 430px;
+    height: 100%;
+    float: left;
+}
+.rewards .rewards_content .rewards_content_title{
+    color: #fff;
+    font-size: 25px;
+    margin-top:40px;
+}
+.rewards .rewards_content .rewards_content_text{
+    color: #ffffff;
+    font-size: 16px;
+    margin: 0 0 5px;
+}
+.rewards_content_button{
+    margin-top:15px;
+}
+
+.rewards .rewards_content .rewards_content_register,.rewards .rewards_content .rewards_content_login{
+    display: block;
+    width:114px;
+    height: 50px;
+    border: 2px solid #a98e67;
+    line-height: 50px;
+    color: #a98e67;
+    font-size: 14px;
+    text-decoration: none;
+    float: left;
+    margin-right:14px;
+    margin-top:5px;
+    text-align: center;
+}
+.rewards .rewards_content .rewards_content_register:hover{
+    background: #b89f7a;
+    color: #ffffff;
+}
+.rewards .rewards_content .rewards_content_login:hover{
+    background: #b89f7a;
+    color: #ffffff;
+}
+.rewards .rewards_content .rewards_content_knowmore{
+    display: block;
+    margin-top:18px;
+    margin-left:30px;
+    font-size: 14px;
+    color: #a98e67;
+    float: left;
+}
+/*rewards结束*/
+
+
+
+/*app开始*/
+.app_pc{
+    background: #EFEBE8 url("images/app-web.png") 0 0 no-repeat;
+    background-size: contain;
+    padding-top: 23%;
+    position: relative;
+}
+.app_pc  img{
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    left: 41%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+}
+.app_content{
+    width: 35%;
+    position: absolute;
+    left: 41%;
+    top: 50%;
+    -webkit-transform:translateX(147px) translateY(-50%);
+}
+.app_content p{
+    font-size: 18px;
+    color: #3d3d3d;
+    height: 28px;
+    line-height: 28px;
+    margin-bottom: 44px;
+    font-weight:400;
+}
+.app_content a{
+    text-decoration: none;
+    color: #b89f7a;
+}
+.app_content .app_konwmore:hover{
+    color: coral;
+    text-decoration:underline;
+}
+.app_pc .app_btn{
+    display: none;
+}
+/*app结束*/
+
+/*mosaic开始*/
+.mosaic{
+    overflow: hidden;
+
+}
+.mosaic a{
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    margin-left:-50%;
+    text-align: center;
+}
+.mosaic_left{
+    width: 50%;
+    background: url("images/tmall-banner-20180109104542.jpg") 0 0 no-repeat;
+    background-size: contain;
+    padding-top:50%;
+    float: left;
+    position: relative;
+
+}
+.mosaic_left h2{
+    color: #D81026;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: normal;
+}
+.mosaic_left h3{
+    color: #000000;
+    font-weight: 900;
+    font-size: 13px;
+    line-height: 22px;
+    letter-spacing: 3px;
+}
+.mosaic_right{
+    width: 50%;
+    background: url("images/FT-Grid (2)-20170328191448.jpg") 0 0 no-repeat;
+    background-size: contain;
+    padding-top:50%;
+    float: left;
+    position: relative;
+}
+.mosaic_right h2{
+    font-size: 30px;
+    font-weight: 400;
+    color: #fffffe;
+}
+.mosaic_right h3{
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 22px;
+    letter-spacing: 3px;
+    color: #a98e67;
+
+}
+/*mosaic结束*/
+
+
+/*collection开始*/
+.collection h3{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*collection结束*/
+
+
+
+
+
+
+
+
+@media screen and (max-width: 991px){
+       .img01{
+           display: none;
+       }
+    .img02{
+        display: block;
+    }
+}
+@media screen and (max-width: 768px){
+    .header{
+        padding-left:15px;
+        padding-right:10px;
+    }
+    .user-info p{
+        font-size: 12px;
+    }
+    .user-info a{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 767px){
+    .rewards_mask,.rewards_content{
+        width: 100%;
+        text-align: center;
+    }
+    .rewards{
+        padding: 0 35px;
+    }
+    .rewards .container{
+        width: 100%;
+    }
+    .rewards .rewards_mask{
+        padding: 55px 0 0;
+        text-align: center;
+        height: 85px;
+    }
+    .rewards .rewards_content .rewards_content_title,.rewards .rewards_content .rewards_content_text{
+        margin-bottom: 10px;
+    }
+    .rewards .rewards_content_button{
+        margin-top:30px;
+    }
+   .rewards .rewards_content_button .rewards_content_register,.rewards .rewards_content_button .rewards_content_login{
+        width: 80%;
+       float: none;
+       margin: 0 auto 10px;
+    }
+    .rewards .rewards_content .rewards_content_knowmore{
+        float: none;
+        display: block;
+        margin-bottom: 28px;
+        text-align: right;
+    }
+    .app_pc{
+        background-image:url("images/app-mobile.png") ;
+        padding-top: 98%;
+    }
+    .app_pc img{
+        display: none;
+    }
+    .app_content{
+        width: 92%;
+        padding: 4%;
+        position: static;
+        -webkit-transform:  translateY(0) translateX(0);
+        text-align: center;
+    }
+    .app_content p{
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .app_pc .app_btn{
+        display: block;
+        width: 220px;
+        height: 80px;
+        margin: 10px auto 0;
+        background: url("images/udp-starbucks-cn.svg") center center no-repeat;
+    }
+    .mosaic .mosaic_left,.mosaic .mosaic_right{
+        width: 100%;
+        padding-top: 100%;
+    }
+}
