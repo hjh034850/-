@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #div1{
+            width: 300px;
+            margin: 100px auto;
+        }
+        h2{
+            text-align: center
+        }
+        li{
+            background: green;
+            height: 30px;
+            line-height: 30px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-bottom: 10px;
+        }
+        hr{
+            margin-top: 10px;
+        }
+        .left{
+            float: left;
+        }
+        .right{
+            float: right;
+        }
+        .red{
+            background:#f00;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <h2>services</h2>
+        <ul>
+            <li v-for = "val in arr" @click = "fn(val)" :class="{red:val.isRed}"  v-if=""><span class="left">{{val.name}}</span><span class="right">{{val.price}}</span></li>
+        </ul>
+        <hr>
+        <div id="sum">
+            <span>total</span>
+            <span v-text="sum1">0</span>
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:"#div1",
+            data:{
+                arr:[
+                    {name:"aaa",price:234,isRed:false},
+                    {name:"bbb",price:456,isRed:false},
+                    {name:"ccc",price:254,isRed:false},
+                    {name:"ddd",price:563,isRed:false}        
+                    ],
+                sum1:0
+            },
+            methods:{
+                fn:function(o){
+                    o.isRed = !o.isRed;
+                    if(o.isRed){
+                        this.sum1 = this.sum1 +o.price;
+                    }else{
+                        this.sum1 = this.sum1 -o.price;
+                    }
+                }
+            }
+        });
+    
+    </script>
+</body>
+</html>
