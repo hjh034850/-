@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red{
+            color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+    <input type="text" v-model="msg" @keyup = "filterAttr()">
+    <button @click = "fn()">add</button>
+    <ul>
+        <li v-for="val in arr" @click = "change(val)" :class="{red:val.isRed}">{{val.name}}</li>
+    </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm  = new Vue({
+            el:"#div1",
+            data:{
+                arr:[],
+                msg:"",
+                newArr:[],
+                sum:-1
+            },
+            methods:{
+                fn:function(){
+                    this.arr = this.newArr;
+                    var obj = {
+                        name:this.msg,
+                        isRed:false
+                    }
+                    this.sum++;
+                    this.arr[this.sum] = obj;
+                    this.newArr = this.arr;
+                    this.msg = "";
+                    this.arr.sort(function(x,y){
+                        return x.name > y.name;
+                    });
+                },
+                change:function(o){
+                    o.isRed = !o.isRed;
+                },
+                filterAttr(){
+                    var arr1 = this.arr.filter((obj) => {
+                        return obj.name.includes(this.msg);
+                    });
+                    this.arr = arr1;
+                }
+            }
+        });
+
+
+    </script>
+</body>
+</html>
