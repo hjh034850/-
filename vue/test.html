@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #f00;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+    <ul>
+        <li v-for="val in arr">{{val}}</li>
+    </ul>
+    <ul>
+        <li v-for = "(val,key) in student">{{key}}:{{val}}</li>
+    </ul>
+    </div>
+    <div id="div1">
+        <button v-on:click="fn">click</button>
+        {{num}}
+    </div>
+
+
+    <div id="div2"></div>
+     <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:"#app",
+            data:{
+                arr:['a','b','c','d'],
+                student:{
+                    name:"zs",
+                    age:20,
+                    num:001,
+                    school:"weichuang"
+                }
+            }
+        }); 
+        var vm1 = new Vue({
+            el:"#div1",
+            data:{
+                num:0
+            },
+            methods:{
+                fn:function(){
+                    this.num++;
+                }
+            }
+        });
+
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>
