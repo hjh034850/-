@@ -31,9 +31,9 @@
                         </tr>
                     </thead>
                     <tbody id="product-list">
-                        <tr v-for = "obj in proList">
+                        <tr v-for = "(obj,index) in proList">
                             <td>
-                                <input type="checkbox">
+                                <input type="checkbox" @click = "selectProduct(obj)">
                             </td>
                             <td>
                                 <img :src="obj.productImg" alt="" width="100">
@@ -46,13 +46,13 @@
                             </td>
                             <td class="price">{{obj.productPrice}}</td>
                             <td>
-                                <button class="sub">-</button>
-                                <input type="text" :value="obj.productQuentity">
-                                <button class="add">+</button>
+                                <button class="sub" @click = "changeMoney(obj,-1)">-</button>
+                                <input type="text" :value="obj.productQuentity" v-model="obj.productQuentity">
+                                <button class="add" @click = "changeMoney(obj,1)">+</button>
                             </td>
                             <td class="total-price">{{obj.productPrice * obj.productQuentity}}</td>
                             <td>
-                                <a href="javascript:;" class="del">删除</a>
+                                <a href="javascript:;" class="del" @click="del(index)">删除</a>
                             </td>
                         </tr>
                     </tbody>
@@ -62,7 +62,7 @@
                             </td>
                             <td>
                                 总计：
-                                <span id="total">0</span>
+                                <span id="total">{{sumMoney}}</span>
                             </td>
                             <td>
                                 <button>结账</button>
@@ -79,7 +79,42 @@
                 var vm = new Vue({
                     el:"#cart",
                     data:{
-                        proList:[]
+                        proList:[],  
+                        sumMoney:0
+                    },
+                    methods:{
+                        changeMoney:function(o,way){
+                            // console.log(o.productQuentity);
+                            if(way <0){
+                               if(o.productQuentity !== 0){
+                                o.productQuentity--;
+                             } 
+                            }else{
+                                o.productQuentity++;
+                            }    
+                            this.calcuMoney();
+                        },
+                        selectProduct:function(item){
+                            if(typeof item.checked == "undefined"){
+                                this.$set(item,"checked",true)
+                            }else{
+                                item.checked = !item.checked;
+                            }
+                            this.calcuMoney();
+                        },
+                        calcuMoney:function(){
+                            var _this = this;
+                            _this.sumMoney = 0;
+                            this.proList.forEach(function(item){
+                                if(item.checked){
+                                    _this.sumMoney += item.productPrice * item.productQuentity;
+                                }
+                            })
+                        },
+                        del:function(idx){
+                            this.proList.splice(idx,1);
+                            this.calcuMoney();
+                        }
                     },
                     beforeCreate:function(){
                         axios.get('cart.json').then((res) => {
