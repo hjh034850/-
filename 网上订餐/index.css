@@ -4,15 +4,18 @@
 }
 body{
     background: #eeeeee;
+    height: 2000px;
 }
 ul{
     list-style: none;
 }
-#container{
+.container{
     width: 1000px;
     margin: 0 auto;
+    overflow: hidden;
 }
 #head{
+    /*overflow: hidden;*/
     background: #fff;
 }
 .header{
@@ -36,7 +39,9 @@ ul{
     height: 80px;
     float: left;
 }
+#list{
 
+}
 #list a{
     display: block;
     float: left;
@@ -60,6 +65,7 @@ ul{
     border: 1px solid #e0e0e0;
     border-right: none;
     float: left;
+    padding-left:10px;
 }
 #select .search-btn{
     width: 40px;
@@ -73,4 +79,108 @@ ul{
     position: absolute;
     right: 0;
     top: 0px;
+}
+#carouse{
+    height: 200px;
+    background: #ff0;
+}
+#new{
+    width: 693px;
+    margin-top:15px;
+    background-color: #fff;
+
+}
+#new .no-line{
+    border-right: none;
+}
+#new .title{
+    border-bottom: 1px solid #e5e5e5;
+    color: #333333;
+    height: 35px;
+    font-size: 16px;
+    font-weight: 400;
+    padding-left:18px;
+    padding-top:12px;
+    /*background-color: #fff;*/
+}
+#new ul{
+    overflow: hidden;
+    /*border-top: 1px solid #e5e5e5;*/
+}
+#new li{
+    width: 230px;
+    float: left;
+    margin-top:10px;
+    border-top:1px solid #e5e5e5;
+    border-right: 1px dashed #ccc;
+}
+#new li .img-box img{
+    width: 170px;
+    height: 120px;
+}
+#new li .img-box{
+    width: 170px;
+    margin: 20px auto 0;
+}
+#new li .name{
+    margin:0px auto 0;
+    width: 170px;
+}
+#new li .name p{
+    display: block;
+    width: 150px;
+    bottom: 0;
+    padding: 10px;
+    color: #333;
+    font-size: 13px;
+    font-weight: 700;
+}
+#new li .good{
+    display: block;
+    height: 16px;
+    width: 30px;
+    font-size: 12px;
+    color: #999;
+    margin-left:32px;
+}
+#new li .sale{
+    width: 170px;
+    margin:10px auto 0;
+    overflow: hidden;
+}
+#new li .price{
+    font-size: 14px;
+    color: #ff5a5a;
+    font-weight: 700;
+    float: left;
+}
+#new li a{
+    text-decoration: none;
+}
+#new li .buying{
+    display: block;
+    width: 80px;
+    height: 20px;
+    margin-left:20px;
+    text-align: center;
+    line-height: 20px;
+    background-color: #4e4e4e;
+    color: #ffff00;
+    float: left;
+    font-size: 14px;
+}
+#new li .add{
+    width: 18px;
+    height: 18px;
+    line-height: 15px;
+    display: block;
+    text-align: center;
+    border-radius: 50%;
+    background: #ffff00;
+    float: right;
+}
+#main{
+    width: 700px;
+
+    background: #00ff00;
 }
