@@ -34,6 +34,12 @@ ul{
     height: 80px;
     float: left;
 }
+#head  .iconfont{
+    font-size: 26px;
+    position: absolute;
+    right: 7px;
+    top: 5px;
+}
 #logo{
     width: 200px;
     height: 80px;
@@ -80,20 +86,109 @@ ul{
     right: 0;
     top: 0px;
 }
-#carouse{
+#info{
     height: 200px;
-    background: #ff0;
+    margin-top:20px;
+    background-color: #ffffff;
+    position: relative;
 }
-#new{
+#info .restaurant{
+    overflow: hidden;
+    float: left;
+}
+#info img{
+    width: 200px;
+    height: 150px;
+    float: left;
+    margin-top:20px;
+}
+
+#info h1{
+    width: 220px;
+    margin-top:20px;
+    margin-left:20px;
+    font-family: '宋体';
+    font-size: 25px;
+
+}
+#info .restaurant{
+    margin-left:10px;
+    margin-top:10px;
+}
+#info .restaurant .time{
+    overflow: hidden;
+    font-size: 14px;
+    margin-left:20px;
+    margin-top:10px;
+}
+#info .restaurant .time p{
+    float: left;
+}
+#info .restaurant .time span{
+    margin-left:10px;
+    float: left;
+}
+#info .restaurant .addr{
+    overflow: hidden;
+    font-size: 14px;
+    margin-left:20px;
+    margin-top:10px;
+}
+#info .restaurant .addr p{
+    float: left;
+}
+#info .restaurant .addr span{
+    margin-left:10px;
+    float: left;
+}
+
+#info .restaurant .phone{
+    margin-left:20px;
+    overflow: hidden;
+    font-size: 14px;
+    margin-top:10px;
+}
+#info .restaurant .phone p{
+    float: left;
+}
+#info .restaurant .phone span{
+    margin-left:10px;
+    float: left;
+}
+#info .price{
+    overflow: hidden;
+}
+#info .price ul{
+    overflow: hidden;
+    float: right;
+}
+#info .price li{
+    float: left;
+    width: 100px;
+    margin-right:10px;
+}
+#info .price p{
+    margin-top:50px;
+    font-size: 12px;
+    color: #6a6a6a;
+}
+#info .price span{
+    display: block;
+    margin-top:20px;
+    font-size: 28px;
+    font-weight: 900;
+    color: #4a4a4a;
+}
+.new{
     width: 693px;
     margin-top:15px;
     background-color: #fff;
 
 }
-#new .no-line{
+.new .no-line{
     border-right: none;
 }
-#new .title{
+.new .title{
     border-bottom: 1px solid #e5e5e5;
     color: #333333;
     height: 35px;
@@ -101,32 +196,30 @@ ul{
     font-weight: 400;
     padding-left:18px;
     padding-top:12px;
-    /*background-color: #fff;*/
 }
-#new ul{
+.new ul{
     overflow: hidden;
-    /*border-top: 1px solid #e5e5e5;*/
 }
-#new li{
+.new li{
     width: 230px;
     float: left;
     margin-top:10px;
     border-top:1px solid #e5e5e5;
     border-right: 1px dashed #ccc;
 }
-#new li .img-box img{
+.new li .img-box img{
     width: 170px;
     height: 120px;
 }
-#new li .img-box{
+.new li .img-box{
     width: 170px;
     margin: 20px auto 0;
 }
-#new li .name{
+.new li .name{
     margin:0px auto 0;
     width: 170px;
 }
-#new li .name p{
+.new li .name p{
     display: block;
     width: 150px;
     bottom: 0;
@@ -135,7 +228,7 @@ ul{
     font-size: 13px;
     font-weight: 700;
 }
-#new li .good{
+.new li .good{
     display: block;
     height: 16px;
     width: 30px;
@@ -143,21 +236,21 @@ ul{
     color: #999;
     margin-left:32px;
 }
-#new li .sale{
+.new li .sale{
     width: 170px;
     margin:10px auto 0;
     overflow: hidden;
 }
-#new li .price{
+.new li .price{
     font-size: 14px;
     color: #ff5a5a;
     font-weight: 700;
     float: left;
 }
-#new li a{
+.new li a{
     text-decoration: none;
 }
-#new li .buying{
+.new li .buying{
     display: block;
     width: 80px;
     height: 20px;
@@ -169,7 +262,7 @@ ul{
     float: left;
     font-size: 14px;
 }
-#new li .add{
+.new li .add{
     width: 18px;
     height: 18px;
     line-height: 15px;
@@ -180,7 +273,6 @@ ul{
     float: right;
 }
 #main{
-    width: 700px;
+    margin-top: 10px;
 
-    background: #00ff00;
 }
