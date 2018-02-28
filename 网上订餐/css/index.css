@@ -39,6 +39,7 @@ ul{
     position: absolute;
     right: 7px;
     top: 5px;
+
 }
 #logo{
     width: 200px;
@@ -79,12 +80,9 @@ ul{
     border:1px solid #e0e0e0;
     float: left;
 }
-#select img{
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    right: 0;
-    top: 0px;
+#select .search-btn:hover{
+    background: #ff6700;
+    cursor: pointer;
 }
 #info{
     height: 200px;
@@ -109,7 +107,6 @@ ul{
     margin-left:20px;
     font-family: '宋体';
     font-size: 25px;
-
 }
 #info .restaurant{
     margin-left:10px;
@@ -120,9 +117,14 @@ ul{
     font-size: 14px;
     margin-left:20px;
     margin-top:10px;
+    position: relative;
 }
 #info .restaurant .time p{
     float: left;
+}
+#info .iconfont{
+   float: left;
+    margin-right:10px;
 }
 #info .restaurant .time span{
     margin-left:10px;
@@ -273,6 +275,6 @@ ul{
     float: right;
 }
 #main{
-    margin-top: 10px;
+    margin-top: 20px;
 
 }
