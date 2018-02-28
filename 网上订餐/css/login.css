@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    width: 800px;
+    height: 500px;
+    margin: 170px auto;
+    position: relative;
+}
+#container #logo{
+    position: relative;
+    width: 400px;
+    float: left;
+}
+#container h2{
+    width: 100px;
+    height: 100px;
+    color: #000000;
+    font-size: 20px;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+
+}
+#container h2 p{
+    font-size: 12px;
+}
+#container img{
+    width: 280px;
+}
+
+#login{
+    position: absolute;
+    top: 40px;
+    right: 100px;
+    /*width: 400px;*/
+}
+#login p{
+    display: inline-block;
+    position: relative;
+}
+#login span{
+  float: right;
+    display: block;
+    width: 1px;
+    height: 1px;
+}
+#login a{
+    text-decoration: none;
+    border: 1px solid #4e4e4e;
+    color: #4e4e4e;
+    margin-right:20px;
+}
+#login a:hover{
+    color: #000;
+}
+#login .no-login{
+    float: right;
+    margin-right:0;
+}
