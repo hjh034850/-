@@ -15,7 +15,6 @@
     <div id="div1">
     <input type="text" v-model="msg" @keyup = "filterAttr()">
     <button @click = "fn()">add</button>
-
     <ul>
         <li v-for="val in arr" @click = "change(val)" :class="{red:val.isRed}">{{val.name}}</li>
     </ul>
