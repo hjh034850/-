@@ -24,6 +24,7 @@
             addevent(document,"DOMContentLoaded",selector,false);
         }
     }
+    
     Jquery.prototype.on = function(type,fn){
         for(var i =0;i <this.element.length;i++){
             addevent(this.element[i],type,fn,false);
