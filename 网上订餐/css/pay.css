@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #eeeeee;
+    height: 2000px;
+}
+ul{
+    list-style: none;
+}
+.container{
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#head{
+    /*overflow: hidden;*/
+    background: #fff;
+    margin-bottom:50px;
+}
+.header{
+    height: 80px;
+}
+#head h2{
+    width: 80px;
+    height: 80px;
+    font-size: 16px;
+    float: right;
+    margin-top:25px;
+    margin-right:25px;
+}
+#head img{
+    width: 80px;
+    height: 80px;
+    float: left;
+}
+#head  .iconfont{
+    font-size: 26px;
+    position: absolute;
+    right: 7px;
+    top: 5px;
+
+}
+#logo{
+    width: 200px;
+    height: 80px;
+    float: left;
+}
+#list{
+
+}
+#list a{
+    display: block;
+    float: left;
+    margin-left:70px;
+    margin-top:25px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+#list a:hover{
+    color: #ff6700;
+}
+#select{
+    float: right;
+    margin-top:18px;
+    position: relative;
+}
+#select .search-text{
+    width: 200px;
+    height: 40px;
+    border: 1px solid #e0e0e0;
+    border-right: none;
+    float: left;
+    padding-left:10px;
+}
+#select .search-btn{
+    width: 40px;
+    height: 40px;
+    border:1px solid #e0e0e0;
+    float: left;
+}
+#select .search-btn:hover{
+    background: #ff6700;
+    cursor: pointer;
+}
+
+.container .right{
+    width: 590px;
+    background: #ffffff;
+    float: right;
+}
