@@ -220,6 +220,7 @@ ul{
 .new li .name{
     margin:0px auto 0;
     width: 170px;
+    text-align: center;
 }
 .new li .name p{
     display: block;
