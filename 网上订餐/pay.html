@@ -29,9 +29,57 @@
 
 </div>
 <div class="container">
-    <div class="left"></div>
-    <div class="right">
-        <h3>送餐详情</h3>
+    <div class="left-container"></div>
+    <div class="right-container">
+        <div class="right">
+            <h3>送餐详情</h3>
+            <div class="address">
+                <i class="iconfont add_address">&#xe668;</i>
+                添加新地址
+            </div>
+            <div class="mess message">
+                <label>给商家留言:</label>
+                <input type="text" class="show-tags" name="message" placeholder="不要辣，多放盐等口味要求" maxlength="100">
+            </div><br>
+            <div class="mess bill">
+                <label>发票信息:</label>
+                <input type="text" class="show-tags" name="bills" placeholder="请输入发票抬头">
+            </div><br>
+            <div class="mess pay">
+                <label>付款方式:</label>
+                <div class="pay_style">
+                    <a href="javascript:;">餐到付款</a>
+                    <a href="javascript:;" class="selected">在线支付</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="hope-time">
+            <label>期望送达时间:</label>
+            <select name="" id="">
+                <option value="立即送出">立即送出</option>
+                <option value="">14:30</option>
+                <option value="">15:00</option>
+                <option value="">15:30</option>
+                <option value="">16:00</option>
+                <option value="">16:30</option>
+                <option value="">17:00</option>
+                <option value="">17:30</option>
+                <option value="">18:00</option>
+            </select>
+        </div>
+
+        <div class="pay-area">
+            <div class="quick">
+                <div class="money">
+                    您需支付&nbsp
+                    <span>￥</span>
+                    <span class="total-price">63</span>
+                </div>
+                <a href="#">去付款</a>
+            </div>
+        </div>
+
     </div>
 </div>
 </body>
