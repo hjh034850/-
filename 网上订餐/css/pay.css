@@ -9,6 +9,7 @@ body{
 ul{
     list-style: none;
 }
+
 .container{
     width: 1000px;
     margin: 0 auto;
@@ -85,9 +86,145 @@ ul{
     background: #ff6700;
     cursor: pointer;
 }
-
-.container .right{
-    width: 590px;
-    background: #ffffff;
+.container .right-container{
     float: right;
+}
+.container .right{
+    width: 558px;
+    background: #ffffff;
+
+    padding: 30px 0 30px 30px;
+}
+.container .right h3{
+    font-size: 16px;
+    font-weight: 400;
+    color: #313131;
+    margin-bottom:10px;
+}
+.container .right .address{
+    width: 528px;
+    height: 86px;
+    line-height: 86px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    text-align: center;
+    color: #b5b5b5;
+}
+.container .right .address:hover{
+    cursor: pointer;
+}
+.container .right .address i{
+    width: 22px;
+    height: 22px;
+    color: #b5b5b5;
+}
+.container .mess{
+    margin-top:28px;
+}
+.container  label{
+    width: 87px;
+    padding-top:8px;
+    float: left;
+    color: #434343;
+    font-size: 12px;
+    font-weight: 400;
+}
+.container .mess .show-tags{
+    height: 18px;
+    line-height: 18px;
+    margin: 0;
+    width: 354px;
+    float: left;
+    border: 0;
+    padding-left: 6px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    background-image: url("../img/sprite_3.png");
+    background-repeat:no-repeat;
+    background-position: -579px 0;
+}
+.container .bills{
+    margin-top:20px;
+}
+.container .pay_style{
+    overflow: hidden;
+    padding-top:5px;
+}
+.container .pay .pay_style a{
+    text-decoration: none;
+    float: left;
+    display: block;
+    width: 75px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    margin-right:20px;
+    color: #434343;
+    background-image: url("../img/sprite_3.png");
+    background-repeat:no-repeat;
+    background-position: -400px -4px;
+}
+.container .pay .pay_style .selected{
+    background-position: -319px -4px;
+    color: #ffa735;
+}
+.container  .hope-time{
+    border: 1px dashed #e8e8e8;
+    padding:15px 0 15px 30px;
+    background-color: #fff9da;
+}
+.container .right-container .hope-time label{
+    font-size: 12px;
+}
+.container  .hope-time select{
+    color: #000;
+    width: 98px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    border: 1px solid #E1E1E1;
+    padding-left: 12px;
+    display: inline-block;
+    background-color: #FFF;
+    vertical-align: middle;
+}
+
+.container .pay-area{
+    border: 1px dashed #e8e8e8;
+    padding: 20px 30px 22px;
+    background: #fff;
+
+}
+.container .pay-area .quick{
+    overflow: hidden;
+}
+.container .pay-area .quick .money{
+    float: left;
+    font-size: 12px;
+    font-weight: 700;
+}
+.container .pay-area .quick .money span{
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffa735;
+}
+.container .pay-area .quick a{
+    display: block;
+    float: right;
+    text-decoration: none;
+    color: #434343;
+    text-align: center;
+    width: 70px;
+    height: 31px;
+    line-height: 31px;
+    padding: 0 20px;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom:0;
+    border: 1px solid #eee;
+    background: #ffd705;
+}
+.container .pay-area .quick a:hover{
+    background: #fbc60f;
 }
